@@ -35,7 +35,6 @@ import (
 	"github.com/uptrace/bunrouter"
 	"github.com/uptrace/opentelemetry-go-extra/otelzap"
 	"github.com/uptrace/pkg/clickhouse/ch"
-	"github.com/uptrace/uptrace"
 	uptracego "github.com/uptrace/uptrace-go/uptrace"
 	"github.com/uptrace/uptrace/cmd/uptrace/command"
 	"github.com/uptrace/uptrace/pkg"
@@ -133,7 +132,7 @@ func runHTTPServer(
 	logger *slog.Logger,
 	router bunapp.RouterParams,
 ) error {
-	handleStaticFiles(conf, router.RouterGroup, uptrace.DistFS())
+	//handleStaticFiles(conf, router.RouterGroup, uptrace.DistFS())
 	handler := http.Handler(router.Router)
 	handler = gzhttp.GzipHandler(handler)
 	handler = httputil.DecompressHandler{Next: handler}
