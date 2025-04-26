@@ -15,9 +15,9 @@
 
 ##
 ## ClickHouse database credentials.
-##
+## Look for which port ClickHouse is listening on:
 ch:
-  addr: localhost:9000
+  addr: localhost:9001
   user: default
   password:
   database: uptrace
